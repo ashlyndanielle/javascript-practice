@@ -1,9 +1,15 @@
+.slider {
+  display: flex;
+  justify-content: center;
+}
 .right-arrow {
   border-left: 100px solid black;
+  right: 10px
 }
 
 .left-arrow {
   border-right: 100px solid black;
+  left: 4px;
 }
 .arrows {
   width: 0;
@@ -11,4 +17,5 @@
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
   position: absolute;
+  margin: 85px;
 }
