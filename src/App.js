@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import SlideOne from './Carousel/SlideOne';
+import Slider from './Carousel/Slider';
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        APP
-        <SlideOne/>
-      </div>
+      <Switch>
+        <Route exact path='/' component={ Slider } />
+      </Switch>
     );
   }
 }

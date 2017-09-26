@@ -5,11 +5,11 @@ import URL from '../assets/Mountains.jpg'
 const SlideOne = (props) => {
 
   let background = {
-    backgroundImage: `url${URL}`,
+    backgroundImage: `url(${URL})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '200px',
-    width: '200px'
+    height: '313px',
+    width: '500px'
   }
 
   return (

@@ -1,0 +1,14 @@
+.right-arrow {
+  border-left: 60px solid black;
+}
+
+.left-arrow {
+  border-right: 60px solid black;
+}
+.arrows {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  margin: 10px;
+}
