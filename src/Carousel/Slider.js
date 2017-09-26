@@ -41,11 +41,11 @@ class Slider extends Component {
   render() {
     return (
       <div className='slider'>
-        <span className='left-arrow arrows'></span>
+        <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span>
         { this.state.slideCount === 1 ? <SlideOne /> : null }
         { this.state.slideCount === 2 ? <SlideTwo /> : null }
         { this.state.slideCount === 3 ? <SlideThree /> : null }
-        <span className='right-arrow arrows'></span>
+        <span className='right-arrow arrows' onClick={ this.handleRightArrow }></span>
       </div>
     );
   }
