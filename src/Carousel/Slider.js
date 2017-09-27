@@ -36,6 +36,9 @@ class Slider extends Component {
   }
 
   render() {
+    setTimeout( ()=> {
+      this.handleRightArrow();
+    }, 3000)
     for (var value in this.props) {
       this.state.backgroundURL.push(this.props[value]);
     }
