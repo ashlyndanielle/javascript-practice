@@ -3,19 +3,22 @@
   justify-content: center;
 }
 .right-arrow {
-  border-left: 100px solid black;
-  right: 10px
+  border-left: 80px solid black;
+  right: 70px
 }
 
 .left-arrow {
-  border-right: 100px solid black;
-  left: 4px;
+  border-right: 80px solid black;
+  left: 70px;
 }
 .arrows {
   width: 0;
   height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
   position: absolute;
   margin: 85px;
+}
+.arrows:hover{
+  cursor: pointer;
 }
