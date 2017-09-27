@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import NextArrow from './NextArrow';
+import PrevArrow from './PrevArrow';
+
 import './Slider.css';
 
 class Slider extends Component {
@@ -36,9 +39,7 @@ class Slider extends Component {
   }
 
   render() {
-    setTimeout( ()=> {
-      this.handleRightArrow();
-    }, 3000)
+
     for (var value in this.props) {
       this.state.backgroundURL.push(this.props[value]);
     }
@@ -53,9 +54,10 @@ class Slider extends Component {
     
     return (
       <div className='slider'>
-        <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span>
+        <PrevArrow prev={ this.handleLeftArrow } />
+        {/* <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span> */}
         <div style={ background }></div>
-        <span className='right-arrow arrows' onClick={ this.handleRightArrow }></span>
+        <NextArrow next={ this.handleRightArrow } />
       </div>
     );
   }
