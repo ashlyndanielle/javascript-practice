@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
-import SlideOne from './SlideOne';
-import SlideTwo from './SlideTwo';
-import SlideThree from './SlideThree';
+// import SlideOne from './SlideOne';
+// import SlideTwo from './SlideTwo';
+// import SlideThree from './SlideThree';
+
+// import butterfly from '../assets/butterfly.jpg';
+// import mountains from '../assets/Mountains.jpg';
+// import river from '../assets/river.jpg';
 
 import './Slider.css';
 
@@ -39,36 +43,39 @@ class Slider extends Component {
   // }
 
     this.state = {
-      slideCount: 0,
-      backgroundURL: [0,1,2,3]
+      slideCount: 2,
+      backgroundURL: []
     }
   }
 
-  handleRightArrow = () => {
-    if ( this.state.slideCount < backgroundURL.length - 1 ){
-      this.setState({
-        slideCount: this.state.slideCount + 1
-      })
-    } else {
-      this.setState({
-        slideCount: 0
-      })
-    }
-  }
-  handleLeftArrow = () => {
-    if ( this.state.slideCount > 0 ){
-      this.setState({
-        slideCount: this.state.slideCount - 1
-      })
-    } else {
-      this.setState({
-        slideCount: backgroundURL.length
-      })
-    }
-  }
+  // handleRightArrow = () => {
+  //   if ( this.state.slideCount < backgroundURL.length - 1 ){
+  //     this.setState({
+  //       slideCount: this.state.slideCount + 1
+  //     })
+  //   } else {
+  //     this.setState({
+  //       slideCount: 0
+  //     })
+  //   }
+  // }
+  // handleLeftArrow = () => {
+  //   if ( this.state.slideCount > 0 ){
+  //     this.setState({
+  //       slideCount: this.state.slideCount - 1
+  //     })
+  //   } else {
+  //     this.setState({
+  //       slideCount: backgroundURL.length
+  //     })
+  //   }
+  // }
 
   render() {
-    console.log(this.props.children)
+    for (var value in this.props) {
+      this.state.backgroundURL.push(this.props[value]);
+      console.log('cats ', this.state.backgroundURL)
+    }
     
     let background = {
       backgroundImage: `url(${this.state.backgroundURL[this.state.slideCount]})`,
@@ -82,9 +89,6 @@ class Slider extends Component {
       <div className='slider'>
         <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span>
         <div style={ background }></div>
-        {/* { this.state.slideCount === 1 ? <SlideOne /> : null }
-        { this.state.slideCount === 2 ? <SlideTwo /> : null }
-        { this.state.slideCount === 3 ? <SlideThree /> : null } */}
         <span className='right-arrow arrows' onClick={ this.handleRightArrow }></span>
       </div>
     );

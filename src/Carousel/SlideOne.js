@@ -13,8 +13,9 @@ const SlideOne = (props) => {
   }
 
   return (
-    <div style={ background }>
-      
+    <div>
+      {props.words}
+      <div style={ background }></div>
     </div>
   );
 };

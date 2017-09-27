@@ -10,9 +10,9 @@ const Test = () => {
   return (
     <div>
       <Slider 
-        butterfly={ butterfly }
-        mountains={ mountains }
-        river={ river }
+        butterfly={butterfly}
+        moutains={mountains}
+        river={river}
       />
     </div>
   );
