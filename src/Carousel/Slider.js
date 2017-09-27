@@ -16,15 +16,21 @@ class Slider extends Component {
   }
 
   handleRightArrow = () => {
-    if ( this.state.slideCount < this.state.backgroundURL.length - 1 ){
-      this.setState({
-        slideCount: this.state.slideCount + 1
-      })
-    } else {
-      this.setState({
-        slideCount: 0
-      })
-    }
+    let img = document.getElementById("slideImg").classList;
+    img.add("slide-right");
+    setTimeout( () => {
+      if ( this.state.slideCount < this.state.backgroundURL.length - 1 ){
+        this.setState({
+          slideCount: this.state.slideCount + 1
+        })
+      } else {
+        this.setState({
+          slideCount: 0
+        })
+      }
+      img.remove("slide-right");
+    }, 1002)
+    console.log(img)
   }
   handleLeftArrow = () => {
     if ( this.state.slideCount > 0 ){
@@ -48,15 +54,15 @@ class Slider extends Component {
       backgroundImage: `url(${this.state.backgroundURL[this.state.slideCount]})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '300px',
-      width: '400px'
+      height: '350px',
+      width: '500px'
     }
     
     return (
       <div className='slider'>
         <PrevArrow prev={ this.handleLeftArrow } />
         {/* <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span> */}
-        <div style={ background }></div>
+        <div className="" id='slideImg' style={ background }></div>
         <NextArrow next={ this.handleRightArrow } />
       </div>
     );

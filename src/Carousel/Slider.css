@@ -1,24 +1,52 @@
-.slider {
-  display: flex;
-  justify-content: center;
+/*------------- BASE --------------*/
+
+
+
+/*------------- COMPONENTS --------------*/
+
+.slide-right {
+  position: relative;
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.slide-left {
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: reverse;
 }
 .right-arrow {
   border-left: 80px solid black;
-  right: 300px
 }
-
 .left-arrow {
   border-right: 80px solid black;
-  left: 300px;
 }
 .arrows {
   width: 0;
   height: 0;
   border-top: 40px solid transparent;
   border-bottom: 40px solid transparent;
-  position: absolute;
-  margin: 85px;
+  margin: 130px 30px;
 }
 .arrows:hover{
   cursor: pointer;
+}
+
+/*------------- MODULES --------------*/
+
+.slider {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------ KEYFRAMES ----------- */
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 30px;
+  }
 }
