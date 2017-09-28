@@ -8,10 +8,15 @@ import './Slider.css';
 class Slider extends Component {
   constructor(props){
     super(props);
-
+    
     this.state = {
       slideCount: 0,
       backgroundURL: []
+    }
+  }
+  componentWillMount() {
+    for (var value in this.props) {
+    this.state.backgroundURL.push(this.props[value]);
     }
   }
 
@@ -42,17 +47,14 @@ class Slider extends Component {
       })
     }
   }
-  handleDotClick = () => {
+  handleDotClick = i => {
     this.setState({
-      slideCount: this.state.backgroundURL[key]
+      slideCount: i
     })
+    console.log(i)
   }
 
   render() {
-
-    for (var value in this.props) {
-      this.state.backgroundURL.push(this.props[value]);
-    }
     
     let background = {
       backgroundImage: `url(${this.state.backgroundURL[this.state.slideCount]})`,
@@ -61,8 +63,9 @@ class Slider extends Component {
       height: '350px',
       width: '500px'
     }
+
     let dot = this.state.backgroundURL.map( (image, i) => {
-      return <div className='circle' key={image[i]} onClick={ handleDotClick }></div>
+      return <div className='circle' key={i} onClick={ () => this.handleDotClick(i) }></div>
     })
     
     return (

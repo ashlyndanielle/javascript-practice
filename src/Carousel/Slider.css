@@ -40,6 +40,9 @@
   border: 2px solid white;
   background: transparent;
 }
+.circle:active {
+  background: white;
+}
 .center {
   display: flex;
   justify-content: center;
