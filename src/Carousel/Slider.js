@@ -34,18 +34,23 @@ class Slider extends Component {
         })
       }
       img.remove("slide-right");
-    }, 1002) 
+    }, 500) 
   }
   handleLeftArrow = () => {
-    if ( this.state.slideCount > 0 ){
-      this.setState({
-        slideCount: this.state.slideCount - 1
-      })
-    } else {
-      this.setState({
-        slideCount: this.state.backgroundURL.length
-      })
-    }
+    let img = document.getElementById('slideImg').classList;
+    img.add('slide-left');
+    setTimeout( () => {
+      if ( this.state.slideCount > 0 ){
+        this.setState({
+          slideCount: this.state.slideCount - 1
+        })
+      } else {
+        this.setState({
+          slideCount: this.state.backgroundURL.length - 1
+        })
+      }
+      img.remove('slide-left');
+    }, 500)
   }
   handleDotClick = i => {
     this.setState({
