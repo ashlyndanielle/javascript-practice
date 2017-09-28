@@ -29,8 +29,7 @@ class Slider extends Component {
         })
       }
       img.remove("slide-right");
-    }, 1002)
-    console.log(img)
+    }, 1002) 
   }
   handleLeftArrow = () => {
     if ( this.state.slideCount > 0 ){
@@ -42,6 +41,11 @@ class Slider extends Component {
         slideCount: this.state.backgroundURL.length
       })
     }
+  }
+  handleDotClick = () => {
+    this.setState({
+      slideCount: this.state.backgroundURL[key]
+    })
   }
 
   render() {
@@ -57,14 +61,21 @@ class Slider extends Component {
       height: '350px',
       width: '500px'
     }
+    let dot = this.state.backgroundURL.map( (image, i) => {
+      return <div className='circle' key={image[i]} onClick={ handleDotClick }></div>
+    })
     
     return (
-      <div className='slider'>
-        <PrevArrow prev={ this.handleLeftArrow } />
-        {/* <span className='left-arrow arrows' onClick={ this.handleLeftArrow }></span> */}
-        <div className="" id='slideImg' style={ background }></div>
-        <NextArrow next={ this.handleRightArrow } />
-      </div>
+      <section className='carousel-container'>
+        <div className='slider center'>
+          <PrevArrow prev={ this.handleLeftArrow } />
+          <div className="" id='slideImg' style={ background }></div>
+          <NextArrow next={ this.handleRightArrow } />
+        </div>
+        <div className='dot-container center'>
+          {dot}
+        </div>
+      </section>
     );
   }
 }
