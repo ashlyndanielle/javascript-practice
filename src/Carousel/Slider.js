@@ -51,7 +51,16 @@ class Slider extends Component {
     this.setState({
       slideCount: i
     })
-    console.log(i)
+    var el = document.querySelectorAll('.dot-container div');
+    for (let i = 0; i < el.length; i++) {
+      el[i].onclick = function() {
+        var c = 0;
+        while (c < el.length) {
+          el[c++].className = 'circle';
+        }
+        el[i].className = 'circle active-dot';
+      };
+    }
   }
 
   render() {

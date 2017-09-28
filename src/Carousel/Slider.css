@@ -40,7 +40,7 @@
   border: 2px solid white;
   background: transparent;
 }
-.circle:active {
+.active-dot {
   background: white;
 }
 .center {
