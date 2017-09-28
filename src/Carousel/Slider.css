@@ -1,5 +1,8 @@
 /*------------- BASE --------------*/
-
+body {
+  font-family: sans-serif;
+  padding: 0;
+}
 
 
 /*------------- COMPONENTS --------------*/
@@ -17,17 +20,17 @@
   animation-direction: reverse;
 }
 .right-arrow {
-  border-left: 80px solid white;
+  border-left: 100px solid white;
 }
 .left-arrow {
-  border-right: 80px solid white;
+  border-right: 100px solid white;
 }
 .arrows {
   width: 0;
   height: 0;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
-  margin: 130px 30px;
+  border-top: 200px solid transparent;
+  border-bottom: 200px solid transparent;
+  margin: 0px 30px;
 }
 .arrows:hover{
   cursor: pointer;
@@ -53,6 +56,10 @@
   padding-top: 10px;
 }
 .carousel-container {
+  box-shadow: inset 45px 0px 30px -16px white, inset -45px 0px 30px -16px white;
+  margin: 10px auto 50px auto;
+  width: 1000px;
+  padding: 20px;
   background: -webkit-radial-gradient(#648880, #293f50);
   background:    -moz-radial-gradient(#648880, #293f50);
   background:         radial-gradient(#648880, #293f50);

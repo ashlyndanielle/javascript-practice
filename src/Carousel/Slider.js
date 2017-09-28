@@ -69,8 +69,8 @@ class Slider extends Component {
       backgroundImage: `url(${this.state.backgroundURL[this.state.slideCount]})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '350px',
-      width: '500px'
+      height: '400px',
+      width: '600px'
     }
 
     let dot = this.state.backgroundURL.map( (image, i) => {
